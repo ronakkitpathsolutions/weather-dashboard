@@ -12,5 +12,26 @@
 		"sourceType": "module"
 	},
 	"plugins": ["react"],
-	"rules": {}
+	"rules": {
+		"no-unused-vars": "warn",
+		"no-var": "warn",
+		"no-debugger": "error",
+		"no-dupe-keys": "warn",
+		"no-duplicate-case": "warn",
+		"no-dupe-args": "warn",
+		"no-empty-pattern": "warn",
+		"no-duplicate-imports": "error",
+		"camelcase": [
+			"warn",
+			{
+				"properties": "always",
+				"ignoreDestructuring": true
+			}
+		],
+		"curly": "warn",
+		"no-script-url": "error",
+		"semi": ["warn", "never"],
+		"array-bracket-spacing": ["warn", "never"],
+		"quotes": ["warn", "single", { "allowTemplateLiterals": true }]
+	}
 }
