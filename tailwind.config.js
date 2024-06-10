@@ -3,6 +3,9 @@ module.exports = {
 	content: ['./src/**/*.{js,jsx,ts,tsx,html}'],
 	theme: {
 		extend: {
+			transitionProperty: {
+				width: 'width',
+			},
 			screens: {
 				'2xs': '280px',
 				xs: '375px',

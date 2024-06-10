@@ -38,7 +38,7 @@
 		"semi": ["warn", "never"],
 		"array-bracket-spacing": ["warn", "never"],
 		"quotes": ["warn", "single", { "allowTemplateLiterals": true }],
-		"arrow-body-style": ["error", "always"],
+		"arrow-body-style": "off",
 		"react/function-component-definition": [
 			"warn",
 			{
@@ -48,6 +48,9 @@
 		"react/jsx-fragments": "off",
 		"import/no-extraneous-dependencies": "off",
 		"react/prop-types": "off",
-		"react/destructuring-assignment": "off"
+		"react/destructuring-assignment": "off",
+		"import/prefer-default-export": "off",
+		"import/no-named-as-default": "warn",
+		"react/jsx-props-no-spreading": "off"
 	}
 }
