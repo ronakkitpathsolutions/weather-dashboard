@@ -1,7 +1,8 @@
 import React from 'react'
+import Routing from './routes'
 
-function App() {
-	return <h1 className="underline">Welcome</h1>
+const App = () => {
+	return <Routing />
 }
 
 export default App
