@@ -25,8 +25,8 @@
 		"watch": "webpack serve --watch"
 	},
 	"lint-staged": {
-		"*.js": "npm run lint",
-		"*.{js,css,md,html,json}": "npm run format"
+		"*.{js,jsx}": "npm run lint",
+		"*.{js,jsx,ts,tsx, css,md,html,json}": "npm run format"
 	},
 	"eslintConfig": {
 		"extends": [
