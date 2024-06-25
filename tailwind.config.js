@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
 	content: ['./src/**/*.{js,jsx,ts,tsx,html}'],
 	theme: {
@@ -30,16 +32,25 @@ module.exports = {
 					500: '#535942',
 				},
 				initial: {
-					100: '#F8F9FA',
-					200: '#E9ECEF',
-					300: '#DEE2E6',
-					400: '#CED4DA',
-					500: '#ADB5BD',
-					600: '#6C757D',
-					700: '#495057',
-					800: '#343A40',
-					900: '#212529',
+					50: '#f8fafc',
+					100: '#f1f5f9',
+					200: '#e2e8f0',
+					300: '#cbd5e1',
+					400: '#94a3b8',
+					500: '#64748b',
+					600: '#475569',
+					700: '#334155',
+					800: '#1e293b',
+					900: '#0f172a',
 				},
+				variants: {
+					error: '#dc3545',
+					success: '#198754',
+					warning: '#ffc107',
+				},
+			},
+			fontFamily: {
+				sans: ['"Playwrite AU SA"', ...defaultTheme.fontFamily.sans],
 			},
 		},
 	},
