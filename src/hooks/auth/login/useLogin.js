@@ -1,14 +1,26 @@
 import { useMemo, useCallback } from 'react'
 import { useFormik } from 'formik'
+import { useDispatch, useSelector } from 'react-redux'
 import { loginValidation } from '../../../assets/utils/validations'
 import useHistory from '../../useHistory'
+import { fetchUserByLogin } from '../../../redux/slices/auth.slice'
 
 const useLogin = () => {
 	const history = useHistory()
+	const dispatch = useDispatch()
 
-	const handleLogin = useCallback(async (payload) => {
-		console.log('payload', payload)
-	}, [])
+	const { isLoading, error } = useSelector(({ auth }) => auth)
+
+	const handleLogin = useCallback(
+		async (payload) => {
+			dispatch(fetchUserByLogin(payload)).then((res) => {
+				localStorage.setItem('token', res.payload?.token || '')
+			})
+		},
+		[dispatch]
+	)
+
+	console.log('error', error)
 
 	const { values, setValues, errors, handleSubmit, handleBlur, touched } =
 		useFormik({
@@ -74,6 +86,7 @@ const useLogin = () => {
 		formData,
 		handleSubmit,
 		handleNavigate,
+		isLoading,
 	}
 }
 

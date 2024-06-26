@@ -17,8 +17,8 @@ export const isTokenActive = (token = null) => {
 	return decoded?.exp > Date.now() / 1000
 }
 
-export const decodeToken = async (token = null) => {
+export const decodeToken = (token = null) => {
 	if (!token) return {}
-	const tokenValues = await jwtDecode(token)
+	const tokenValues = jwtDecode(token)
 	return tokenValues
 }

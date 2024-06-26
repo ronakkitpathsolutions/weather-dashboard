@@ -18,6 +18,7 @@ const Routing = ({ ...props }) => {
 					<Route index key={id} {...val} />
 				))}
 			</Route>
+			<Route path="*" element={<p>Not Found</p>} />
 		</Routes>
 	)
 }

@@ -7,7 +7,7 @@ import Button from '../../../shared/buttons/button'
 import { PAGES } from '../../../constant/urls'
 
 const Login = () => {
-	const { formData, handleSubmit, handleNavigate } = useLogin()
+	const { formData, handleSubmit, handleNavigate, isLoading } = useLogin()
 
 	return (
 		<section className="w-screen h-screen">
@@ -34,7 +34,7 @@ const Login = () => {
 							{formData?.map(({ id, ...data }) => (
 								<FormGroup
 									labelClass="text-primary-500"
-									inputClass="!h-11 focus-visible:ring-primary-500"
+									inputClass="!h-12 focus-visible:ring-primary-500"
 									className="mb-3"
 									key={id}
 									{...data}
@@ -52,8 +52,9 @@ const Login = () => {
 								/>
 								<Button
 									type="submit"
-									className="!h-11 bg-primary-400 text-white hover:bg-primary-500"
+									className="!h-12 bg-primary-400 text-white hover:bg-primary-500"
 									fullWidth
+									disabled={isLoading}
 									label="Login"
 									variant="primary"
 								/>

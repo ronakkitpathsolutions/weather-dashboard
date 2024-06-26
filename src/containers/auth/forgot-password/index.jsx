@@ -33,7 +33,7 @@ const ForgotPassword = () => {
 							{formData?.map(({ id, ...data }) => (
 								<FormGroup
 									labelClass="text-primary-500"
-									inputClass="!h-11 focus-visible:ring-primary-500"
+									inputClass="!h-12 focus-visible:ring-primary-500"
 									className="mb-3"
 									key={id}
 									{...data}
@@ -42,7 +42,7 @@ const ForgotPassword = () => {
 							<div className="flex justify-end items-end mt-8 flex-col">
 								<Button
 									type="submit"
-									className="!h-11 bg-primary-400 text-white hover:bg-primary-500"
+									className="!h-12 bg-primary-400 text-white hover:bg-primary-500"
 									fullWidth
 									label="Continue"
 									variant="primary"

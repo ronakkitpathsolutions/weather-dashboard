@@ -1,6 +1,6 @@
 import React from 'react'
 import { Navigate, Outlet } from 'react-router-dom'
-import withAuth from '../hoc/withAuth'
+import WithAuth from '../hoc/withAuth'
 import { PAGES } from '../constant/urls'
 
 const AuthLayout = ({ ...props }) => {
@@ -11,4 +11,4 @@ const AuthLayout = ({ ...props }) => {
 
 export default AuthLayout
 
-const WithAuthLayout = withAuth(Outlet, Navigate)
+const WithAuthLayout = WithAuth(Outlet, Navigate)
