@@ -4,9 +4,10 @@ import FormGroup from '../../../shared/forms/form-group'
 import useLogin from '../../../hooks/auth/login/useLogin'
 import Form from '../../../shared/forms'
 import Button from '../../../shared/buttons/button'
+import { PAGES } from '../../../constant/urls'
 
 const Login = () => {
-	const { formData, handleSubmit } = useLogin()
+	const { formData, handleSubmit, handleNavigate } = useLogin()
 
 	return (
 		<section className="w-screen h-screen">
@@ -41,6 +42,9 @@ const Login = () => {
 							))}
 							<div className="flex justify-end items-end mt-4 flex-col">
 								<Button
+									handleClick={() =>
+										handleNavigate(PAGES.AUTH.FORGOT_PASSWORD.url)
+									}
 									type="button"
 									className="!px-1 !py-0"
 									label="Forgot Password?"

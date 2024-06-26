@@ -54,6 +54,7 @@
 		"no-console": ["error", { "allow": ["log"] }],
 		"react/button-has-type": "off",
 		"consistent-return": "off",
-		"jsx-a11y/label-has-associated-control": "off"
+		"jsx-a11y/label-has-associated-control": "off",
+		"jsx-a11y/no-static-element-interactions": "off"
 	}
 }

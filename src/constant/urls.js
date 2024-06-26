@@ -8,6 +8,10 @@ export const PAGES = {
 			url: '/login',
 			name: 'Login',
 		},
+		FORGOT_PASSWORD: {
+			url: '/forgot-password',
+			name: 'Forgot Password',
+		},
 	},
 	ADMIN: {
 		DASHBOARD: {

@@ -1,12 +1,12 @@
-import { useMemo, useCallback } from 'react'
+import { useCallback, useMemo } from 'react'
 import { useFormik } from 'formik'
-import { loginValidation } from '../../../assets/utils/validations'
 import useHistory from '../../useHistory'
+import { emailValidation } from '../../../assets/utils/validations'
 
-const useLogin = () => {
+const useForgotPassword = () => {
 	const history = useHistory()
 
-	const handleLogin = useCallback(async (payload) => {
+	const handleForgotPassword = useCallback(async (payload) => {
 		console.log('payload', payload)
 	}, [])
 
@@ -14,11 +14,10 @@ const useLogin = () => {
 		useFormik({
 			initialValues: {
 				email: '',
-				password: '',
 			},
-			validationSchema: loginValidation,
+			validationSchema: emailValidation,
 			onSubmit: async (payload) => {
-				await handleLogin(payload)
+				await handleForgotPassword(payload)
 			},
 		})
 
@@ -54,27 +53,15 @@ const useLogin = () => {
 				handleChange,
 				onBlur: handleBlur,
 			},
-			{
-				id: 'password',
-				placeholder: 'Enter Password',
-				label: 'Password',
-				error: errors.password,
-				isError: touched.password && errors.password,
-				name: 'password',
-				type: 'password',
-				value: values.password,
-				handleChange,
-				onBlur: handleBlur,
-			},
 		],
-		[errors, handleBlur, handleChange, touched, values]
+		[errors.email, handleBlur, handleChange, touched.email, values.email]
 	)
 
 	return {
-		formData,
 		handleSubmit,
+		formData,
 		handleNavigate,
 	}
 }
 
-export default useLogin
+export default useForgotPassword
