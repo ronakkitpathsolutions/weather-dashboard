@@ -5,7 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 module.exports = {
 	entry: './src/index.jsx',
 	output: {
-		path: path.resolve(__dirname, 'dist'),
+		path: path.resolve(__dirname, 'build'),
 		chunkFilename: '[name].[contenthash].js',
 		filename: '[name].[contenthash].js',
 		sourceMapFilename: '[name].[contenthash].js.map',
@@ -49,7 +49,7 @@ module.exports = {
 	],
 	devServer: {
 		static: {
-			directory: path.join(__dirname, 'dist'),
+			directory: path.join(__dirname, 'build'),
 		},
 		compress: true,
 		port: 4000,
