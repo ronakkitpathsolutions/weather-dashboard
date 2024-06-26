@@ -6,6 +6,7 @@
 	"extends": [
 		"eslint:recommended",
 		"plugin:react/recommended",
+		"plugin:react-hooks/recommended",
 		"airbnb",
 		"prettier"
 	],
@@ -38,16 +39,22 @@
 		"semi": ["warn", "never"],
 		"array-bracket-spacing": ["warn", "never"],
 		"quotes": ["warn", "single", { "allowTemplateLiterals": true }],
-		"arrow-body-style": ["error", "always"],
-		"react/function-component-definition": [
-			"warn",
-			{
-				"namedComponents": "arrow-function"
-			}
-		],
+		"arrow-body-style": "off",
+		"react/function-component-definition": "off",
 		"react/jsx-fragments": "off",
 		"import/no-extraneous-dependencies": "off",
 		"react/prop-types": "off",
-		"react/destructuring-assignment": "off"
+		"react/destructuring-assignment": "off",
+		"import/prefer-default-export": "off",
+		"import/no-named-as-default": "warn",
+		"react/jsx-props-no-spreading": "off",
+		"react/jsx-filename-extension": "off",
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "warn",
+		"no-console": ["error", { "allow": ["log"] }],
+		"react/button-has-type": "off",
+		"consistent-return": "off",
+		"jsx-a11y/label-has-associated-control": "off",
+		"jsx-a11y/no-static-element-interactions": "off"
 	}
 }
