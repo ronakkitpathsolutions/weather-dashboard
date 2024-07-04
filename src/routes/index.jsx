@@ -1,11 +1,11 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import useRoute from '../hooks/useRoute'
 import AuthLayout from '../layout/AuthLayout'
 import PrivateLayout from '../layout/MainLayout'
 
 const Routing = ({ ...props }) => {
-	const { authRoutes, privateRoutes } = useRoute()
+	const { authRoutes, privateRoutes, redirectRoute } = useRoute()
 	return (
 		<Routes {...props}>
 			<Route path="/" element={<AuthLayout defaultAccess />}>
@@ -18,7 +18,7 @@ const Routing = ({ ...props }) => {
 					<Route index key={id} {...val} />
 				))}
 			</Route>
-			<Route path="*" element={<p>Not Found</p>} />
+			<Route path="*" element={<Navigate replace to={redirectRoute} />} />
 		</Routes>
 	)
 }

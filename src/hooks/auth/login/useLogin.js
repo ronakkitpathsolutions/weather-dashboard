@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { loginValidation } from '../../../assets/utils/validations'
 import useHistory from '../../useHistory'
 import { fetchUserByLogin } from '../../../redux/slices/auth.slice'
+import { PAGES } from '../../../constant/urls'
 
 const useLogin = () => {
 	const history = useHistory()
@@ -15,9 +16,10 @@ const useLogin = () => {
 		async (payload) => {
 			dispatch(fetchUserByLogin(payload)).then((res) => {
 				localStorage.setItem('token', res.payload?.token || '')
+				history(PAGES.ADMIN.DASHBOARD.url)
 			})
 		},
-		[dispatch]
+		[dispatch, history]
 	)
 
 	console.log('error', error)

@@ -64,18 +64,22 @@ const useRoute = () => {
 		[userRole]
 	)
 
+	const redirectRoute = useMemo(() => {
+		if (!userRole) return PAGES.AUTH.LOGIN.url
+		return PAGES.ADMIN.DASHBOARD.url
+	}, [userRole])
+
 	const authRoutes = useMemo(() => routes.filter((val) => val.isAuth), [routes])
 
 	const privateRoutes = useMemo(() => {
 		return routes.filter((val) => val.isPrivate && handleRoles(val.roles))
 	}, [routes, handleRoles])
 
-	console.log('privateRoutes', privateRoutes, authRoutes)
-
 	return {
 		routes,
 		authRoutes,
 		privateRoutes,
+		redirectRoute,
 	}
 }
 

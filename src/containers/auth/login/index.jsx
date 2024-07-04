@@ -55,7 +55,7 @@ const Login = () => {
 									className="!h-12 bg-primary-400 text-white hover:bg-primary-500"
 									fullWidth
 									disabled={isLoading}
-									label="Login"
+									label={isLoading ? 'Loading' : 'Login'}
 									variant="primary"
 								/>
 							</div>

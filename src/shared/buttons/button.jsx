@@ -31,7 +31,7 @@ const Button = ({
 		<button
 			onClick={handleButtonClick}
 			className={classNames(
-				'inline-flex items-center h-9 justify-center disabled:opacity-50 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none px-4 py-2',
+				'inline-flex items-center h-9 justify-center disabled:opacity-50 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed px-4 py-2',
 				className,
 				fullWidth ? '!w-full' : '',
 				buttonUtilities[variant]
